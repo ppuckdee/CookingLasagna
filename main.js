@@ -1,35 +1,48 @@
 document.addEventListener('DOMContentLoaded', (event) => {
-    
     const EXPECTED_MINUTES_IN_OVEN = 40;
+    const COOK_TIME_PER_LAYER = 2;
 
     // Function to calculate remaining minutes in the oven
     function remainingMinutesInOven(actualMinutesInOven) {
         return EXPECTED_MINUTES_IN_OVEN - actualMinutesInOven;
     }
 
-    // Function to handle the calculation and display the result
-    // .trim removes whitespaces from both sides of string
-    // function isNaN(number: number): boolean 
-    //Returns a Boolean value that indicates whether a value is the reserved value NaN (not a number).
-    function calculateAndDisplayRemainingTime() {
-        
-        //retrieves the current value entered into the HTML input element with the id timeInput and stores it in the variable inputVal.
-        var inputVal = document.getElementById('timeInput').value; 
-        
-        // checks if inputVal is a number and 
-        //if the input, after removing any spaces from the start and end, is not an empty string
-        if (!isNaN(inputVal) && inputVal.trim() !== "") { 
+    // Function to calculate preparation time based on the number of layers
+    function prepTimeInMinutes(numLayers) {
+        return numLayers * COOK_TIME_PER_LAYER;
+    }
 
-            // calculates the remaining minutes in the oven using inputVal and stores the result in remainingMinutes.
-            var remainingMinutes = remainingMinutesInOven(inputVal); 
+    // Corrected function to calculate total working time in minutes
+    function totalTimeInMinutes(numLayers, actualMinutesInOven){
+        return prepTimeInMinutes(numLayers) + remainingMinutesInOven(actualMinutesInOven);
+    }
 
-            document.getElementById('result').textContent = "Remaining time in oven: " + remainingMinutes + " minutes.";
-        
+    // Updated function to handle calculations, now supports two inputs for total time calculation
+    function calculateAndDisplayTime(inputElementId1, inputElementId2, resultElementId, calculationFunction) {
+        const inputVal1 = document.getElementById(inputElementId1).value.trim();
+        const numericInputVal1 = Number(inputVal1);
+
+        let numericInputVal2 = 0;
+        if (inputElementId2) {
+            const inputVal2 = document.getElementById(inputElementId2).value.trim();
+            numericInputVal2 = Number(inputVal2);
+        }
+
+        if (!isNaN(numericInputVal1) && numericInputVal1 !== "") {
+            let time;
+            if (inputElementId2) {
+                time = calculationFunction(numericInputVal1, numericInputVal2);
+            } else {
+                time = calculationFunction(numericInputVal1);
+            }
+            document.getElementById(resultElementId).textContent = `Time: ${time} minutes.`;
         } else {
-            document.getElementById('result').textContent = "Please enter a valid number of minutes.";
+            document.getElementById(resultElementId).textContent = "Please enter a valid number.";
         }
     }
-    
-    // Adding event listener to the button
-    document.getElementById('calculateButton').addEventListener('click', calculateAndDisplayRemainingTime);
+
+    // Adding event listeners to buttons for different calculations
+    document.getElementById('calculateButton').addEventListener('click', () => calculateAndDisplayTime('timeInput', null, 'result', remainingMinutesInOven));
+    document.getElementById('calculateButton2').addEventListener('click', () => calculateAndDisplayTime('layerInput', null, 'result2', prepTimeInMinutes));
+    document.getElementById('calculateButton3').addEventListener('click', () => calculateAndDisplayTime('layerInput', 'timeInput', 'result3', totalTimeInMinutes));
 });

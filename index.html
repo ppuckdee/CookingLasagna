@@ -3,20 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="src/style.css">
+    <link rel="stylesheet" href="style.css">
     <title>Lasagna Prep Calculator</title>
 </head>
 <body>
-    <h1>Lasagna Time Calculator</h1>
-    <h2>How long has the lasagna been in the oven already?</h2>
-    <input type="number" id="timeInput" placeholder="Enter number of mins"> 
+    <div class="title-container">
+        <h1>Lasagna Cooking Time</h1>
+        <img src="image.jpg" alt="Lasagna Logo" class="logo"> <!-- Update path accordingly -->
+    </div>
+    <h2>Calculate the remaining oven time in minutes</h2>
+    <input type="number" id="timeInput" placeholder="Enter number of minutes already in oven"> 
     <button type="button" id="calculateButton">Calculate</button>
-    <h2>How many minutes will you spend preparing the lasagna?</h2>
+    <h2>Calculate the preparation time in minutes</h2>
     <input type="number" id="layerInput" placeholder="Enter number of layers"> 
-    <button type="button" id="calculateButton">Calculate</button>
+    <button type="button" id="calculateButton2">Calculate</button>
+    <h2>Calculate the total working time in minutes</h2>
+    <input type="number" id="totalTime" placeholder="Enter (number of layers, minutes already in oven)"> 
+    <button type="button" id="calculateButton3">Calculate</button>
     <!-- Element to display the result -->
     <h2>Results:</h2>
     <h3 id="result"></h3>
+    <h3 id="result2"></h3>
+    <h3 id="result3"></h3>
     <script src="main.js"></script>
 </body>
 </html>
