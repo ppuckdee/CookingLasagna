@@ -14,20 +14,6 @@ This Cooking Timer Utility is a simple, interactive web tool designed to assist 
 2. **Preparation Time:** Input the number of layers in your dish to calculate the prep time.
 3. **Total Working Time:** Enter both the number of layers and the actual minutes in the oven to calculate the total working time required.
 
-## **Installation**
-This utility does not require installation. Simply include the provided JavaScript code in your web project, and integrate it with your HTML.
+## **Link**
+[https://ppuckdee.github.io/CookingLasagna/](https://ppuckdee.github.io/CookingLasagna/)https://ppuckdee.github.io/CookingLasagna/
 
-### Example of HTML Integration
-To use this utility, ensure you have input fields and buttons in your HTML. Here is a basic example:
-```html
-<input id="timeInput" type="text" placeholder="Minutes in Oven">
-<button id="calculateButton">Calculate Remaining Time</button>
-<div id="result"></div>
-
-<input id="layerInput" type="text" placeholder="Number of Layers">
-<button id="calculateButton2">Calculate Prep Time</button>
-<div id="result2"></div>
-
-<!-- For Total Time Calculation -->
-<button id="calculateButton3">Calculate Total Time</button>
-<div id="result3"></div>
