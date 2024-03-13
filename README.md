@@ -1,4 +1,4 @@
-# Lasagna Cooking Timer Utility README
+# Lasagna Cooking Timer APP README
 ## **Link**
 [https://ppuckdee.github.io/CookingLasagna/](https://ppuckdee.github.io/CookingLasagna/)https://ppuckdee.github.io/CookingLasagna/
 
