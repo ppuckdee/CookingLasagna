@@ -2,22 +2,22 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const EXPECTED_MINUTES_IN_OVEN = 40;
     const COOK_TIME_PER_LAYER = 2;
 
-    // Function to calculate remaining minutes in the oven
+    // function to calculate remaining minutes in the oven
     function remainingMinutesInOven(actualMinutesInOven) {
         return EXPECTED_MINUTES_IN_OVEN - actualMinutesInOven;
     }
 
-    // Function to calculate preparation time based on the number of layers
+    // function to calculate preparation time based on the number of layers
     function prepTimeInMinutes(numLayers) {
         return numLayers * COOK_TIME_PER_LAYER;
     }
 
-    // Corrected function to calculate total working time in minutes
+    // function to calculate total working time in minutes
     function totalTimeInMinutes(numLayers, actualMinutesInOven){
         return prepTimeInMinutes(numLayers) + remainingMinutesInOven(actualMinutesInOven);
     }
 
-    // Updated function to handle calculations, now supports two inputs for total time calculation
+    // function to handle calculations, now supports two inputs for total time calculation
     function calculateAndDisplayTime(inputElementId1, inputElementId2, resultElementId, calculationFunction) {
         const inputVal1 = document.getElementById(inputElementId1).value.trim();
         const numericInputVal1 = Number(inputVal1);
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
     }
 
-    // Adding event listeners to buttons for different calculations
+    // adding event listeners to buttons for different calculations
     document.getElementById('calculateButton').addEventListener('click', () => calculateAndDisplayTime('timeInput', null, 'result', remainingMinutesInOven));
     document.getElementById('calculateButton2').addEventListener('click', () => calculateAndDisplayTime('layerInput', null, 'result2', prepTimeInMinutes));
     document.getElementById('calculateButton3').addEventListener('click', () => calculateAndDisplayTime('layerInput', 'timeInput', 'result3', totalTimeInMinutes));
