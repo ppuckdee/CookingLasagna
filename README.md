@@ -1,7 +1,7 @@
-# Cooking Timer Utility README
+# Lasagna Cooking Timer Utility README
 
 ## **Overview**
-This Cooking Timer Utility is a simple, interactive web tool designed to assist in kitchen timing tasks. Built with JavaScript, it calculates the **remaining time needed in the oven**, the **preparation time based on the number of lasagna layers**, and the **total working time** considering both prep and cook times. It's perfect for chefs and home cooks who want to manage their cooking process more efficiently.
+This Lasagna Cooking Timer Utility is a simple, interactive web tool designed to assist in kitchen timing tasks. Built with JavaScript, it calculates the **remaining time needed in the oven**, the **preparation time based on the number of lasagna layers**, and the **total working time** considering both prep and cook times. It's perfect for chefs and home cooks who want to manage their cooking process more efficiently.
 
 ## **Features**
 - **Remaining Time Calculation:** Calculate how much longer your dish needs to stay in the oven to reach the expected cooking duration.
