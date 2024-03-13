@@ -22,14 +22,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
             // calculates the remaining minutes in the oven using inputVal and stores the result in remainingMinutes.
             var remainingMinutes = remainingMinutesInOven(inputVal); 
-            
+
             document.getElementById('result').textContent = "Remaining time in oven: " + remainingMinutes + " minutes.";
         
         } else {
             document.getElementById('result').textContent = "Please enter a valid number of minutes.";
         }
     }
-
+    
     // Adding event listener to the button
     document.getElementById('calculateButton').addEventListener('click', calculateAndDisplayRemainingTime);
 });
